@@ -28,7 +28,7 @@ public class Sach {
     @Column (name = "ten_tac_gia",length=512)
     private String tenTacGia;
     @Column (name = "isbn",length=256)
-    private String ISBN;
+    private String isbn;
     @Column (name = "mo_ta", columnDefinition = "TEXT")//định nghĩa kiểu dữ liệu là TEXT trong cơ sở dữ liệu
     private String moTa;
     @Column (name = "gia_niem_yet")
