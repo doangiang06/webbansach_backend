@@ -28,6 +28,7 @@ import lombok.Setter;
 // @Setter 
 public class TheLoai {
     @Id 
+    
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (name = "ma_the_loai")
     private int maTheLoai;

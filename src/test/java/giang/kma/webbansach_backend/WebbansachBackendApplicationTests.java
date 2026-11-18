@@ -10,11 +10,7 @@ class WebbansachBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
-		TheLoai theLoai = new TheLoai();
-		theLoai.setMaTheLoai(1);
-		theLoai.setTenTheLoai("Kinh tế");
-		System.out.println("Mã thể loại: " + theLoai.getMaTheLoai());
-		System.out.println("Tên thể loại: " + theLoai.getTenTheLoai());
+
 
 	}
 

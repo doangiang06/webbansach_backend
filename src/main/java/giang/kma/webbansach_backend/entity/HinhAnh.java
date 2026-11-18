@@ -29,7 +29,7 @@ public class HinhAnh {
     private boolean laIcon;
     @Column (name = "duong_dan")
     private String duongDan;
-    @Column (name = "du_lieu_anh")
+    @Column(name = "du_lieu_anh", columnDefinition = "LONGTEXT")
     @Lob //lưu trữ dữ liệu lớn
     private String duLieuAnh;
     @ManyToOne(cascade = {

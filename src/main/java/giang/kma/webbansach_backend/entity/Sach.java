@@ -19,6 +19,7 @@ import lombok.Data;
 @Entity 
 @Table (name = "sach")
 public class Sach {
+
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "ma_sach")

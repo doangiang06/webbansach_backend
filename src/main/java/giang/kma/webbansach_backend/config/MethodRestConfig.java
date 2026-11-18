@@ -9,16 +9,22 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
+import giang.kma.webbansach_backend.entity.NguoiDung;
 import giang.kma.webbansach_backend.entity.TheLoai;
 
 @Configuration 
 public class MethodRestConfig implements RepositoryRestConfigurer{
-private String url = "http://localhost:8080";
+private String url = "http://localhost:3000";
     @Autowired
     private EntityManager entityManager;
 @Override 
 public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
     // TODO Auto-generated method stub
+    //CROS cho phép font_end thực hiện các thao tác
+   cors.addMapping("/**")
+    .allowedOrigins(url)// cho phép thàn font end ở local 3000 thực hiện 
+    .allowedMethods("GET", "POST", "PUT", "DELETE");
+    
     RepositoryRestConfigurer.super.configureRepositoryRestConfiguration(config, cors);
     HttpMethod[] chanCacPhuongThuc={
         HttpMethod.POST,
@@ -37,6 +43,10 @@ public void configureRepositoryRestConfiguration(RepositoryRestConfiguration con
     //  config.exposeIdsFor(TheLoai.class);
     //cấu hình riêng chi thể loại
     chanHttpMethods(TheLoai.class, config, chanCacPhuongThuc);
+    HttpMethod[] phuongThucDelete = {
+        HttpMethod.DELETE
+    };
+    chanHttpMethods(NguoiDung.class, config, phuongThucDelete);// chạn lẻ delete của nguoi dung
 }
 public void chanHttpMethods(Class c,RepositoryRestConfiguration config,HttpMethod[] methods ){
          config.getExposureConfiguration()
