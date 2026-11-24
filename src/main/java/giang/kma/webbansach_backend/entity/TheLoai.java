@@ -39,7 +39,7 @@ public class TheLoai {
         CascadeType.MERGE,CascadeType.DETACH
         ,CascadeType.REFRESH
     })
-@JoinTable (name ="sach_theloai",
+@JoinTable (name ="sach_the_loai",
     joinColumns=@JoinColumn (name="ma_the_loai"),
     inverseJoinColumns=@JoinColumn (name="ma_sach")//cấu hình quan hệ tương tự bên sách chỉ ngược lại, với các cột ma_the_loai và ma_sach
 // 

@@ -18,6 +18,7 @@ import lombok.Data;
 @Data    
 @Entity 
 @Table (name = "sach")
+
 public class Sach {
 
     @Id 
@@ -45,7 +46,7 @@ public class Sach {
         CascadeType.MERGE,CascadeType.DETACH
         ,CascadeType.REFRESH// xóa đi 1 sách ko xóa thể laoij ngược lại tương tự -> ko dùng remove
     })
-@JoinTable (name ="sach_theloai",
+@JoinTable (name ="sach_the_loai",
     joinColumns=@JoinColumn (name="ma_sach"),
     inverseJoinColumns=@JoinColumn (name="ma_the_loai")// cấu hình bảng trung gian để liên kết giữa hai thực thể Sach và TheLoai, với các cột ma_sach và ma_the_loai
 )
