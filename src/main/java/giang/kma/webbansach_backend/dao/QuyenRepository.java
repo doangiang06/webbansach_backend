@@ -5,8 +5,10 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 import giang.kma.webbansach_backend.entity.Quyen;
+import java.util.List;
+
 
 @RepositoryRestResource (path = "quyen")
 public interface QuyenRepository extends JpaRepository<Quyen, Integer> {
-
+public Quyen findByTenQuyen(String tenQuyen);
 }
