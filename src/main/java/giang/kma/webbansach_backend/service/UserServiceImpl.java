@@ -24,6 +24,11 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private QuyenRepository quyenRepository;
+    @Autowired
+public UserServiceImpl(NguoiDungRepository nguoiDungRepository, QuyenRepository quyenRepository) {
+    this.nguoiDungRepository = nguoiDungRepository;
+    this.quyenRepository = quyenRepository;
+}
 
     /**
      * Spring Security gọi hàm này khi người dùng đăng nhập.

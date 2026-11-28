@@ -63,7 +63,7 @@ private String diaChiGiaoHang;
 
 private List<SachYeuThich> danhSachSachYeuThich;
 //nhiều người dùng nhiều quyền
-    @ManyToMany (fetch=FetchType.LAZY,cascade ={//nhiều nhiều
+    @ManyToMany (fetch=FetchType.EAGER,cascade ={//nhiều nhiều
         CascadeType.PERSIST,
         CascadeType.MERGE,CascadeType.DETACH
         ,CascadeType.REFRESH// xóa đi 1 sách ko xóa thể laoij ngược lại tương tự -> ko dùng remove
